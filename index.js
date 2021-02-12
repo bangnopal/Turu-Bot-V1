@@ -1,7 +1,7 @@
 const { Client, MessageMedia, Chat, PrivateChat, GroupChat, Message, Contact, Location } = require('whatsapp-web.js')
 const fs = require('fs')
 
-const config = JSON.parse(fs.readFilesync('./auth/config.json'))
+const config = JSON.parse(fs.readFileSync('./auth/config.json'))
 const  { color } = require('./utils/color')
 const msgHandler = require('./message/handler')
 
