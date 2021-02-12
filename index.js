@@ -9,7 +9,7 @@ const msgHandler = require('./message/handler')
 
 const SESSION_FILE_PATH = './auth/session.data.json'
 let sessionCfg;
-if (fs.existSync(SESSION_FILE_PATH)) {
+if (fs.existsSync(SESSION_FILE_PATH)) {
     sessionCfg = require(SESSION_FILE_PATH)
 }
 
@@ -33,7 +33,7 @@ const client = new Client({
 
 client.on('message', async (msg) => {
     console.log(`${color('[MESSAGE]', 'green')} ${color(msg.body, 'yellow')} from ${color(msg.from.replace('@c.us', ''), 'gold')}`)
-    msgHandler(msg)
+    msgHandler(msg, client)
 })
 
 
